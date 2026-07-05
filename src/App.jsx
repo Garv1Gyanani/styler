@@ -73,6 +73,23 @@ function App() {
           </div>
         </div>
       </footer>
+      {/* Floating Demo Badge by Upfora */}
+      <a 
+        href="https://upfora.in" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-6 left-6 z-50 flex flex-col p-3 rounded-lg border border-[var(--gold)] bg-[rgba(10,43,32,0.85)] hover:bg-[rgba(10,43,32,0.95)] text-left shadow-lg backdrop-blur-md transition-all duration-300 group hover:scale-105 cursor-pointer"
+      >
+        <span className="text-[11px] font-semibold text-[var(--ivory)] tracking-wide flex items-center gap-1.5">
+          Demo Website by <span className="text-[var(--gold)] font-bold group-hover:underline">Upfora</span>
+          <svg className="w-3 h-3 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </span>
+        <span className="text-[9px] text-[var(--beige)] mt-0.5 opacity-80 leading-none">
+          Not affiliated with Styler Interior Design
+        </span>
+      </a>
     </>
   );
 }
