@@ -65,20 +65,35 @@ function App() {
             <span className="text-[10px] tracking-[0.3em] text-[var(--gold)]">INTERIOR DESIGN STUDIO</span>
           </div>
           <p className="text-xs text-[var(--beige)]">&copy; {new Date().getFullYear()} Styler Interior Design Studio. All rights reserved.</p>
-          <div className="flex gap-4">
-            {/* Instagram placeholder link */}
-            <a href="#" className="w-8 h-8 rounded-full border border-[var(--gold)] flex items-center justify-center text-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--emerald)] transition-colors">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          
+          {/* Mobile Footer attribution & social */}
+          <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
+            <a 
+              href="https://upfora.in" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[11px] font-semibold text-[var(--ivory)] hover:text-[var(--gold)] transition-colors tracking-wide flex items-center justify-center md:justify-end gap-1"
+            >
+              Demo Website by <span className="underline text-[var(--gold)]">Upfora</span>
             </a>
+            <span className="text-[9px] text-[var(--beige)] opacity-75">
+              Not affiliated with Styler Interior Design
+            </span>
+            <div className="flex gap-4 mt-2 md:mt-1">
+              {/* Instagram placeholder link */}
+              <a href="#" className="w-8 h-8 rounded-full border border-[var(--gold)] flex items-center justify-center text-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--emerald)] transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </footer>
-      {/* Floating Demo Badge by Upfora */}
+      {/* Floating Demo Badge by Upfora (Desktop Only) */}
       <a 
         href="https://upfora.in" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-6 left-6 z-50 flex flex-col p-3 rounded-lg border border-[var(--gold)] bg-[rgba(10,43,32,0.85)] hover:bg-[rgba(10,43,32,0.95)] text-left shadow-lg backdrop-blur-md transition-all duration-300 group hover:scale-105 cursor-pointer"
+        className="hidden md:flex fixed bottom-6 left-6 z-50 flex-col p-3 rounded-lg border border-[var(--gold)] bg-[rgba(10,43,32,0.85)] hover:bg-[rgba(10,43,32,0.95)] text-left shadow-lg backdrop-blur-md transition-all duration-300 group hover:scale-105 cursor-pointer"
       >
         <span className="text-[11px] font-semibold text-[var(--ivory)] tracking-wide flex items-center gap-1.5">
           Demo Website by <span className="text-[var(--gold)] font-bold group-hover:underline">Upfora</span>
