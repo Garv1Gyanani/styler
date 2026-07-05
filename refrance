@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Styler Interior Design Studio | Luxury Interiors, Jaipur & NCR</title>
+<meta name="description" content="Styler Interior Design Studio — luxury residential & commercial interiors in Jaipur & NCR. Modular kitchens, wardrobes, false ceilings, turnkey execution." />
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --emerald:#0F3D2E;
+    --emerald-deep:#0A2B20;
+    --gold:#D4AF37;
+    --gold-light:#E8C766;
+    --ivory:#F8F5F0;
+    --charcoal:#1F2937;
+    --beige:#E7DCCB;
+  }
+  *{ scroll-behavior:smooth; }
+  body{
+    background:var(--ivory);
+    color:var(--charcoal);
+    font-family:'Manrope', sans-serif;
+    overflow-x:hidden;
+  }
+  .font-display{ font-family:'Fraunces', serif; }
+  .font-display-italic{ font-family:'Fraunces', serif; font-style:italic; }
+
+  ::selection{ background:var(--gold); color:var(--emerald-deep); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar{ width:8px; }
+  ::-webkit-scrollbar-track{ background:var(--ivory); }
+  ::-webkit-scrollbar-thumb{ background:var(--emerald); border-radius:0; }
+
+  /* Blueprint corner-bracket signature motif */
+  .blueprint-corner{ position:relative; }
+  .blueprint-corner::before,
+  .blueprint-corner::after{
+    content:'';
+    position:absolute;
+    width:22px; height:22px;
+    border-color:var(--gold);
+    opacity:.85;
+    pointer-events:none;
+  }
+  .blueprint-corner::before{
+    top:-1px; left:-1px;
+    border-top:1.5px solid var(--gold);
+    border-left:1.5px solid var(--gold);
+  }
+  .blueprint-corner::after{
+    bottom:-1px; right:-1px;
+    border-bottom:1.5px solid var(--gold);
+    border-right:1.5px solid var(--gold);
+  }
+
+  .eyebrow{
+    font-family:'Manrope', sans-serif;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--gold);
+  }
+
+  .hairline{ height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  .btn-primary{
+    background:var(--emerald);
+    color:var(--ivory);
+    border:1px solid var(--emerald);
+    transition:.4s cubic-bezier(.2,.8,.2,1);
+  }
+  .btn-primary:hover{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--emerald-deep);
+  }
+  .btn-outline{
+    border:1px solid var(--gold);
+    color:var(--ivory);
+    transition:.4s cubic-bezier(.2,.8,.2,1);
+  }
+  .btn-outline:hover{
+    background:var(--gold);
+    color:var(--emerald-deep);
+  }
+
+  .glass{
+    background:rgba(248,245,240,0.08);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(212,175,55,0.25);
+  }
+  .glass-light{
+    background:rgba(255,255,255,0.55);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(15,61,46,0.08);
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  .navlink{ position:relative; }
+  .navlink::after{
+    content:'';
+    position:absolute; left:0; bottom:-4px;
+    width:0%; height:1px;
+    background:var(--gold);
+    transition:width .35s ease;
+  }
+  .navlink:hover::after{ width:100%; }
+
+  .project-card{ overflow:hidden; }
+  .project-card img{ transition:transform 1s cubic-bezier(.2,.7,.2,1); }
+  .project-card:hover img{ transform:scale(1.08); }
+  .project-overlay{
+    background:linear-gradient(180deg, rgba(15,61,46,0) 30%, rgba(10,43,32,0.92) 100%);
+    transition:opacity .5s ease;
+  }
+
+  .counter{ font-family:'Fraunces', serif; }
+
+  .timeline-line{ background:repeating-linear-gradient(to bottom, var(--gold) 0 6px, transparent 6px 14px); }
+
+  input[type=range]{ -webkit-appearance:none; height:2px; background:var(--emerald); border-radius:0; }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    height:18px; width:18px; border-radius:50%;
+    background:var(--gold); cursor:pointer; border:2px solid var(--emerald);
+  }
+
+  .ba-slider-handle{
+    cursor:ew-resize;
+  }
+
+  @keyframes floaty{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+  }
+  .float-anim{ animation:floaty 5s ease-in-out infinite; }
+
+  @keyframes fadeInUp{
+    from{ opacity:0; transform:translateY(20px);}
+    to{ opacity:1; transform:translateY(0);}
+  }
+  .hero-anim-1{ animation:fadeInUp 1s ease .1s both; }
+  .hero-anim-2{ animation:fadeInUp 1s ease .35s both; }
+  .hero-anim-3{ animation:fadeInUp 1s ease .6s both; }
+  .hero-anim-4{ animation:fadeInUp 1s ease .85s both; }
+
+  .typing-cursor::after{
+    content:'|';
+    animation:blink 1s step-start infinite;
+    color:var(--gold);
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .marquee-track{
+    animation:marquee 28s linear infinite;
+  }
+  @keyframes marquee{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+  @media (max-width: 639px){
+    body{ padding-bottom:56px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+</style>
+
+</head>
+
+<body class="antialiased">
+
+<!-- ============ NAVBAR ============ -->
+
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500" style="background:transparent;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href="#home" class="flex items-center gap-3 group">
+      <!-- PLACEHOLDER LOGO: swap this span for an <img> of Styler's real "S" mark from their Instagram profile -->
+      <span class="relative w-11 h-11 flex items-center justify-center border" style="border-color:var(--gold);">
+        <span class="font-display italic text-2xl" style="color:var(--gold);">S</span>
+      </span>
+      <span class="hidden sm:flex flex-col leading-none">
+        <span id="brandTop" class="font-display text-lg tracking-wide" style="color:var(--ivory);">STYLER</span>
+        <span class="text-[10px] tracking-[0.3em]" style="color:var(--gold);">INTERIOR DESIGN STUDIO</span>
+      </span>
+    </a>
+
+<div id="navlinks" class="hidden lg:flex items-center gap-10 text-sm tracking-wide" style="color:var(--ivory);">
+  <a href="#home" class="navlink">Home</a>
+  <a href="#projects" class="navlink">Projects</a>
+  <a href="#casestudies" class="navlink">Case Studies</a>
+  <a href="#services" class="navlink">Services</a>
+  <a href="#process" class="navlink">Process</a>
+  <a href="#testimonials" class="navlink">Testimonials</a>
+  <a href="#contact" class="navlink">Contact</a>
+</div>
+
+<a href="#lead" class="hidden lg:inline-block px-6 py-2.5 text-sm tracking-wide btn-primary">Book Consultation</a>
+
+<button id="menuBtn" class="lg:hidden flex flex-col gap-1.5 w-8 z-50" aria-label="Open menu">
+  <span class="h-px w-full" style="background:var(--ivory);"></span>
+  <span class="h-px w-full" style="background:var(--ivory);"></span>
+  <span class="h-px w-full" style="background:var(--ivory);"></span>
+</button>
+
+  </div>
+
+  <!-- Mobile menu -->
+
+  <div id="mobileMenu" class="lg:hidden fixed inset-0 z-40 hidden" style="background:var(--emerald-deep);">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-lg" style="color:var(--ivory);">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#casestudies" class="mobile-link">Case Studies</a>
+      <a href="#services" class="mobile-link">Services</a>
+      <a href="#process" class="mobile-link">Process</a>
+      <a href="#testimonials" class="mobile-link">Testimonials</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="#lead" class="mobile-link px-8 py-3 border" style="border-color:var(--gold); color:var(--gold);">Book Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+
+<section id="home" class="relative min-h-screen flex items-end" style="background:var(--emerald-deep);">
+  <div class="absolute inset-0">
+    <img src="https://picsum.photos/seed/styler-hero/2000/1300" alt="Luxury living room designed by Styler Interior Design Studio" class="w-full h-full object-cover opacity-50">
+    <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(10,43,32,.55) 0%, rgba(10,43,32,.35) 40%, rgba(10,43,32,.95) 100%);"></div>
+  </div>
+
+  <!-- blueprint coordinate marks -->
+
+  <div class="absolute top-28 left-6 lg:left-10 hidden md:block hero-anim-1">
+    <div class="text-[10px] tracking-[0.3em]" style="color:var(--gold); opacity:.7;">26.9124° N, 75.7873° E</div>
+  </div>
+  <div class="absolute top-28 right-6 lg:right-10 hidden md:block hero-anim-1 text-right">
+    <div class="text-[10px] tracking-[0.3em]" style="color:var(--gold); opacity:.7;">VAISHALI NAGAR — JAIPUR</div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10 pb-24 pt-40 w-full">
+    <p class="eyebrow hero-anim-1 mb-6">Luxury Interior Design Studio — Jaipur &amp; NCR</p>
+    <h1 class="hero-anim-2 font-display text-[13vw] leading-[0.98] sm:text-6xl lg:text-7xl xl:text-[5.5rem] max-w-4xl" style="color:var(--ivory);">
+      Luxury interiors designed around your <span class="font-display-italic" style="color:var(--gold);">lifestyle.</span>
+    </h1>
+    <p class="hero-anim-3 mt-8 max-w-xl text-base sm:text-lg" style="color:var(--beige);">
+      Residential &nbsp;•&nbsp; Commercial &nbsp;•&nbsp; Modular Kitchens &nbsp;•&nbsp; Turnkey Projects
+    </p>
+
+<div class="hero-anim-4 mt-10 flex flex-wrap gap-4">
+  <a href="#projects" class="px-8 py-4 text-sm tracking-wide btn-primary">View Portfolio</a>
+  <a href="#lead" class="px-8 py-4 text-sm tracking-wide btn-outline">Book Consultation</a>
+</div>
+
+<!-- floating stats -->
+<div class="hero-anim-4 mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
+  <div class="glass blueprint-corner px-5 py-5 float-anim" style="animation-delay:0s;">
+    <div class="font-display text-2xl" style="color:var(--gold);">Residential</div>
+    <div class="text-xs mt-1 tracking-wide" style="color:var(--beige);">&amp; Commercial</div>
+  </div>
+  <div class="glass blueprint-corner px-5 py-5 float-anim" style="animation-delay:.4s;">
+    <div class="font-display text-2xl" style="color:var(--gold);">Jaipur</div>
+    <div class="text-xs mt-1 tracking-wide" style="color:var(--beige);">&amp; NCR Service Area</div>
+  </div>
+  <div class="glass blueprint-corner px-5 py-5 float-anim" style="animation-delay:.8s;">
+    <div class="font-display text-2xl" style="color:var(--gold);">Custom</div>
+    <div class="text-xs mt-1 tracking-wide" style="color:var(--beige);">Designs, Every Time</div>
+  </div>
+  <div class="glass blueprint-corner px-5 py-5 float-anim" style="animation-delay:1.2s;">
+    <div class="font-display text-2xl" style="color:var(--gold);">Turnkey</div>
+    <div class="text-xs mt-1 tracking-wide" style="color:var(--beige);">Execution</div>
+  </div>
+</div>
+
+  </div>
+
+  <a href="#about" class="absolute bottom-8 right-6 lg:right-10 hidden sm:flex items-center gap-3 text-xs tracking-[0.25em]" style="color:var(--beige);">
+    <span class="rotate-90 origin-left">SCROLL</span>
+    <span class="w-px h-10" style="background:var(--gold);"></span>
+  </a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+
+<section id="about" class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--ivory);">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+    <div class="lg:col-span-5 reveal">
+      <p class="eyebrow" style="color:var(--emerald);">The Studio</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4 leading-tight" style="color:var(--emerald-deep);">
+        Every room begins with how you actually <span class="font-display-italic">live in it.</span>
+      </h2>
+      <div class="hairline w-24 my-8"></div>
+      <p class="text-base leading-relaxed" style="color:var(--charcoal);">
+        Styler Interior Design Studio is a Jaipur-based practice built on one conviction: a home should be
+        designed around the people in it, not a catalogue. From Vaishali Nagar, our team works across
+        Jaipur &amp; NCR on residential and commercial interiors — from the first measured drawing to the
+        final handover — with the same attention whether we're detailing a wardrobe shutter or planning
+        an entire floor.
+      </p>
+      <p class="text-base leading-relaxed mt-5" style="color:var(--charcoal);">
+        We don't hand you a moodboard and disappear. Every material, finish and fitting is chosen with
+        you, costed transparently, and executed by a team that stays accountable until the last light
+        fixture is aligned.
+      </p>
+
+  <div class="mt-10 grid grid-cols-2 gap-6">
+    <div>
+      <div class="font-display text-3xl" style="color:var(--emerald);">Luxury</div>
+      <div class="text-xs tracking-wide mt-1 text-gray-500">Materials &amp; finish</div>
+    </div>
+    <div>
+      <div class="font-display text-3xl" style="color:var(--emerald);">Bespoke</div>
+      <div class="text-xs tracking-wide mt-1 text-gray-500">Not templated design</div>
+    </div>
+    <div>
+      <div class="font-display text-3xl" style="color:var(--emerald);">Precise</div>
+      <div class="text-xs tracking-wide mt-1 text-gray-500">Attention to detail</div>
+    </div>
+    <div>
+      <div class="font-display text-3xl" style="color:var(--emerald);">Client-first</div>
+      <div class="text-xs tracking-wide mt-1 text-gray-500">Design that centres you</div>
+    </div>
+  </div>
+</div>
+
+<div class="lg:col-span-7 relative reveal">
+  <div class="grid grid-cols-2 gap-4">
+    <div class="blueprint-corner overflow-hidden aspect-[3/4] mt-10">
+      <img src="https://picsum.photos/seed/styler-living/900/1200" alt="Styler Interior Design Studio — living space detail" class="w-full h-full object-cover">
+    </div>
+    <div class="blueprint-corner overflow-hidden aspect-[3/4]">
+      <img src="https://picsum.photos/seed/styler-dining/900/1200" alt="Styler Interior Design Studio — dining space" class="w-full h-full object-cover">
+    </div>
+  </div>
+  <div class="absolute -bottom-8 left-8 right-8 glass-light blueprint-corner p-6 flex items-center gap-6">
+    <span class="font-display italic text-4xl" style="color:var(--gold);">S</span>
+    <p class="text-sm" style="color:var(--emerald-deep);">"Designing Spaces, Defining Lifestyles" isn't a tagline we picked — it's the brief we give ourselves on every project.</p>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS ============ -->
+
+<section id="projects" class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--emerald-deep);">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal">
+      <div>
+        <p class="eyebrow">Featured Work</p>
+        <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--ivory);">A portfolio built on <span class="font-display-italic" style="color:var(--gold);">restraint.</span></h2>
+      </div>
+      <p class="max-w-md text-sm" style="color:var(--beige);">Six recent rooms and spaces — each one designed from scratch around how the client actually lives or works.</p>
+    </div>
+
+<div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Card 1 -->
+  <div class="project-card relative group blueprint-corner aspect-[4/5] reveal">
+    <img src="https://picsum.photos/seed/styler-project1/900/1125" alt="Modern luxury living room" class="w-full h-full object-cover">
+    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">RESIDENTIAL</span>
+      <h3 class="font-display text-xl mt-2" style="color:var(--ivory);">Modern Luxury Living Room</h3>
+      <p class="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="color:var(--beige);">A double-height living space in warm walnut and brushed brass, planned around a family that entertains often.</p>
+    </div>
+  </div>
+  <!-- Card 2 -->
+  <div class="project-card relative group blueprint-corner aspect-[4/5] sm:mt-10 reveal">
+    <img src="https://picsum.photos/seed/styler-project2/900/1125" alt="Contemporary modular kitchen" class="w-full h-full object-cover">
+    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">MODULAR KITCHEN</span>
+      <h3 class="font-display text-xl mt-2" style="color:var(--ivory);">Contemporary Modular Kitchen</h3>
+      <p class="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="color:var(--beige);">A handleless island kitchen in matte emerald and stone, built for a client who cooks daily, not just for guests.</p>
+    </div>
+  </div>
+  <!-- Card 3 -->
+  <div class="project-card relative group blueprint-corner aspect-[4/5] reveal">
+    <img src="https://picsum.photos/seed/styler-project3/900/1125" alt="Elegant master bedroom" class="w-full h-full object-cover">
+    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">RESIDENTIAL</span>
+      <h3 class="font-display text-xl mt-2" style="color:var(--ivory);">Elegant Master Bedroom</h3>
+      <p class="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="color:var(--beige);">A quiet, low-lit retreat with a fabric-panelled headboard wall and a custom reading nook by the window.</p>
+    </div>
+  </div>
+  <!-- Card 4 -->
+  <div class="project-card relative group blueprint-corner aspect-[4/5] sm:mt-10 reveal">
+    <img src="https://picsum.photos/seed/styler-project4/900/1125" alt="Corporate office space" class="w-full h-full object-cover">
+    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">COMMERCIAL</span>
+      <h3 class="font-display text-xl mt-2" style="color:var(--ivory);">Corporate Office Space</h3>
+      <p class="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="color:var(--beige);">A 4,200 sqft workspace balancing private cabins with open collaboration zones, in oak and deep green.</p>
+    </div>
+  </div>
+  <!-- Card 5 -->
+  <div class="project-card relative group blueprint-corner aspect-[4/5] reveal">
+    <img src="https://picsum.photos/seed/styler-project5/900/1125" alt="Luxury wardrobe design" class="w-full h-full object-cover">
+    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">WARDROBES</span>
+      <h3 class="font-display text-xl mt-2" style="color:var(--ivory);">Luxury Wardrobe Design</h3>
+      <p class="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="color:var(--beige);">A walk-in dressing room with backlit shelving and mixed-finish shutters, planned around the client's wardrobe inventory.</p>
+    </div>
+  </div>
+  <!-- Card 6 -->
+  <div class="project-card relative group blueprint-corner aspect-[4/5] sm:mt-10 reveal">
+    <img src="https://picsum.photos/seed/styler-project6/900/1125" alt="False ceiling transformation" class="w-full h-full object-cover">
+    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">FALSE CEILING</span>
+      <h3 class="font-display text-xl mt-2" style="color:var(--ivory);">False Ceiling Transformation</h3>
+      <p class="text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="color:var(--beige);">A cove-lit gypsum ceiling that reshaped how light moves through a formerly flat, builder-grade living room.</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ BEFORE & AFTER ============ -->
+
+<section class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--ivory);">
+  <div class="max-w-5xl mx-auto text-center reveal">
+    <p class="eyebrow" style="color:var(--emerald);">The Difference</p>
+    <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--emerald-deep);">See the room, <span class="font-display-italic">before we touch it.</span></h2>
+    <p class="text-sm mt-4 text-gray-500">Drag the divider to compare.</p>
+  </div>
+
+  <div class="max-w-4xl mx-auto mt-14 reveal">
+    <div id="baSlider" class="relative w-full aspect-[16/10] overflow-hidden blueprint-corner select-none">
+      <img src="https://picsum.photos/seed/styler-before/1400/875" alt="Before renovation" class="absolute inset-0 w-full h-full object-cover">
+      <div id="baAfterWrap" class="absolute inset-0 w-1/2 overflow-hidden">
+        <img src="https://picsum.photos/seed/styler-after/1400/875" alt="After renovation by Styler Interior Design Studio" class="absolute inset-0 h-full object-cover" style="width:200%; max-width:none; left:0;" id="baAfterImg">
+      </div>
+      <div id="baHandle" class="ba-slider-handle absolute top-0 bottom-0 flex items-center justify-center" style="left:50%; width:2px; background:var(--gold); transform:translateX(-1px);">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center -ml-5" style="background:var(--gold); color:var(--emerald-deep);">
+          <span class="text-xs">↔</span>
+        </div>
+      </div>
+      <span class="absolute top-4 left-4 text-[10px] tracking-[0.25em] px-3 py-1 glass" style="color:var(--ivory);">BEFORE</span>
+      <span class="absolute top-4 right-4 text-[10px] tracking-[0.25em] px-3 py-1 glass" style="color:var(--ivory);">AFTER</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+
+<section id="services" class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--beige);">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal">
+      <p class="eyebrow" style="color:var(--emerald);">What We Do</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4 max-w-2xl" style="color:var(--emerald-deep);">Six services, one team, zero handoffs.</h2>
+    </div>
+
+<div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(15,61,46,0.15);">
+  <!-- service 1 -->
+  <div class="bg-[color:var(--ivory)] p-8 reveal">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.3"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+    <h3 class="font-display text-xl mt-5" style="color:var(--emerald-deep);">Residential Interiors</h3>
+    <p class="text-sm mt-3 text-gray-600 leading-relaxed">Full-home or single-room design, planned around your routine — not a showroom layout.</p>
+    <p class="text-xs mt-4" style="color:var(--emerald);">Apartments · Villas · Duplexes</p>
+  </div>
+  <!-- service 2 -->
+  <div class="bg-[color:var(--ivory)] p-8 reveal">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.3"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 11h18M9 6v-2h6v2"/></svg>
+    <h3 class="font-display text-xl mt-5" style="color:var(--emerald-deep);">Commercial Interiors</h3>
+    <p class="text-sm mt-3 text-gray-600 leading-relaxed">Offices, clinics and retail spaces designed for how your team and clients actually move through them.</p>
+    <p class="text-xs mt-4" style="color:var(--emerald);">Offices · Retail · Clinics</p>
+  </div>
+  <!-- service 3 -->
+  <div class="bg-[color:var(--ivory)] p-8 reveal">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 15h18M9 15V3"/></svg>
+    <h3 class="font-display text-xl mt-5" style="color:var(--emerald-deep);">Modular Kitchens</h3>
+    <p class="text-sm mt-3 text-gray-600 leading-relaxed">Handle-less, island and L-shaped layouts in finishes chosen to survive daily cooking, not just photograph well.</p>
+    <p class="text-xs mt-4" style="color:var(--emerald);">German Hardware · Custom Layouts</p>
+  </div>
+  <!-- service 4 -->
+  <div class="bg-[color:var(--ivory)] p-8 reveal">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.3"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M12 2v20"/></svg>
+    <h3 class="font-display text-xl mt-5" style="color:var(--emerald-deep);">Wardrobes</h3>
+    <p class="text-sm mt-3 text-gray-600 leading-relaxed">Sliding, hinged or walk-in wardrobes designed around what you actually own, down to the last shelf.</p>
+    <p class="text-xs mt-4" style="color:var(--emerald);">Walk-in · Sliding · Loft Storage</p>
+  </div>
+  <!-- service 5 -->
+  <div class="bg-[color:var(--ivory)] p-8 reveal">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.3"><path d="M3 8h18l-2 4H5L3 8Z"/><circle cx="12" cy="16" r="1"/></svg>
+    <h3 class="font-display text-xl mt-5" style="color:var(--emerald-deep);">False Ceilings</h3>
+    <p class="text-sm mt-3 text-gray-600 leading-relaxed">Cove lighting, gypsum detailing and POP work that reshapes how light and height feel in a room.</p>
+    <p class="text-xs mt-4" style="color:var(--emerald);">Cove Lighting · POP · Gypsum</p>
+  </div>
+  <!-- service 6 -->
+  <div class="bg-[color:var(--ivory)] p-8 reveal">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.3"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg>
+    <h3 class="font-display text-xl mt-5" style="color:var(--emerald-deep);">Turnkey Solutions</h3>
+    <p class="text-sm mt-3 text-gray-600 leading-relaxed">Design, materials, civil work and execution under one contract — one team accountable end to end.</p>
+    <p class="text-xs mt-4" style="color:var(--emerald);">Design to Handover</p>
+  </div>
+</div>
+
+<div class="mt-10 flex flex-wrap gap-6 text-sm text-gray-600 reveal">
+  <span>+ Space Planning</span>
+  <span class="hidden sm:inline">·</span>
+  <span>+ 2D &amp; 3D Design</span>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE STYLER ============ -->
+
+<section class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--emerald-deep);">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal">
+      <p class="eyebrow">Why Styler</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4 max-w-2xl" style="color:var(--ivory);">The reasons clients don't second-guess us.</h2>
+    </div>
+
+<div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="reveal">
+    <div class="text-3xl font-display" style="color:var(--gold);">01</div>
+    <h3 class="font-display text-lg mt-3" style="color:var(--ivory);">Tailored Designs</h3>
+    <p class="text-sm mt-2" style="color:var(--beige);">Every layout is drawn fresh for your space and habits — never a reused floor plan.</p>
+  </div>
+  <div class="reveal">
+    <div class="text-3xl font-display" style="color:var(--gold);">02</div>
+    <h3 class="font-display text-lg mt-3" style="color:var(--ivory);">Transparent Process</h3>
+    <p class="text-sm mt-2" style="color:var(--beige);">Fixed quotations, itemised BOQs, and no surprise costs mid-project.</p>
+  </div>
+  <div class="reveal">
+    <div class="text-3xl font-display" style="color:var(--gold);">03</div>
+    <h3 class="font-display text-lg mt-3" style="color:var(--ivory);">Experienced Team</h3>
+    <p class="text-sm mt-2" style="color:var(--beige);">Designers, site engineers and carpenters who've worked together across dozens of homes.</p>
+  </div>
+  <div class="reveal">
+    <div class="text-3xl font-display" style="color:var(--gold);">04</div>
+    <h3 class="font-display text-lg mt-3" style="color:var(--ivory);">Premium Materials</h3>
+    <p class="text-sm mt-2" style="color:var(--beige);">Branded hardware, moisture-resistant boards and finishes sourced for longevity.</p>
+  </div>
+  <div class="reveal">
+    <div class="text-3xl font-display" style="color:var(--gold);">05</div>
+    <h3 class="font-display text-lg mt-3" style="color:var(--ivory);">On-Time Delivery</h3>
+    <p class="text-sm mt-2" style="color:var(--beige);">Scheduled milestones you can track, with a team that plans around real timelines.</p>
+  </div>
+  <div class="reveal">
+    <div class="text-3xl font-display" style="color:var(--gold);">06</div>
+    <h3 class="font-display text-lg mt-3" style="color:var(--ivory);">Complete Project Management</h3>
+    <p class="text-sm mt-2" style="color:var(--beige);">One point of contact from first sketch to final handover — no vendor juggling.</p>
+  </div>
+</div>
+
+<div class="hairline my-16"></div>
+
+<div class="grid grid-cols-3 gap-6 text-center">
+  <div class="reveal">
+    <div class="counter font-display text-2xl sm:text-3xl" style="color:var(--gold);" data-static="Full-Service">—</div>
+    <p class="text-xs sm:text-sm mt-2 tracking-wide" style="color:var(--beige);">Design to Execution</p>
+  </div>
+  <div class="reveal">
+    <div class="counter font-display text-2xl sm:text-3xl" style="color:var(--gold);" data-static="Jaipur & NCR">—</div>
+    <p class="text-xs sm:text-sm mt-2 tracking-wide" style="color:var(--beige);">Service Area</p>
+  </div>
+  <div class="reveal">
+    <div class="counter font-display text-2xl sm:text-3xl" style="color:var(--gold);" data-static="3D">—</div>
+    <p class="text-xs sm:text-sm mt-2 tracking-wide" style="color:var(--beige);">Visualization Support</p>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ DESIGN PROCESS ============ -->
+
+<section id="process" class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--ivory);">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center reveal">
+      <p class="eyebrow" style="color:var(--emerald);">How We Work</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--emerald-deep);">Six stages. <span class="font-display-italic">One accountable team.</span></h2>
+    </div>
+
+<div class="relative mt-20">
+  <div class="timeline-line hidden sm:block absolute left-6 top-2 bottom-2 w-px"></div>
+
+  <div class="space-y-14 sm:space-y-16">
+    <div class="relative sm:pl-20 reveal">
+      <div class="hidden sm:flex absolute left-0 top-0 w-12 h-12 items-center justify-center border font-display" style="border-color:var(--gold); color:var(--gold); background:var(--ivory);">1</div>
+      <h3 class="font-display text-xl" style="color:var(--emerald-deep);">Consultation</h3>
+      <p class="text-sm mt-2 text-gray-600 max-w-xl">We visit the site, understand your budget, lifestyle and must-haves, and map the scope of work.</p>
+    </div>
+    <div class="relative sm:pl-20 reveal">
+      <div class="hidden sm:flex absolute left-0 top-0 w-12 h-12 items-center justify-center border font-display" style="border-color:var(--gold); color:var(--gold); background:var(--ivory);">2</div>
+      <h3 class="font-display text-xl" style="color:var(--emerald-deep);">Concept Design</h3>
+      <p class="text-sm mt-2 text-gray-600 max-w-xl">Layouts, mood boards and material direction are presented for your sign-off before anything is finalised.</p>
+    </div>
+    <div class="relative sm:pl-20 reveal">
+      <div class="hidden sm:flex absolute left-0 top-0 w-12 h-12 items-center justify-center border font-display" style="border-color:var(--gold); color:var(--gold); background:var(--ivory);">3</div>
+      <h3 class="font-display text-xl" style="color:var(--emerald-deep);">3D Visualization</h3>
+      <p class="text-sm mt-2 text-gray-600 max-w-xl">Photorealistic renders of every room, so you see the space before a single wall is touched.</p>
+    </div>
+    <div class="relative sm:pl-20 reveal">
+      <div class="hidden sm:flex absolute left-0 top-0 w-12 h-12 items-center justify-center border font-display" style="border-color:var(--gold); color:var(--gold); background:var(--ivory);">4</div>
+      <h3 class="font-display text-xl" style="color:var(--emerald-deep);">Material Selection</h3>
+      <p class="text-sm mt-2 text-gray-600 max-w-xl">Hands-on selection of finishes, hardware and fabric at our studio — with clear cost implications for each.</p>
+    </div>
+    <div class="relative sm:pl-20 reveal">
+      <div class="hidden sm:flex absolute left-0 top-0 w-12 h-12 items-center justify-center border font-display" style="border-color:var(--gold); color:var(--gold); background:var(--ivory);">5</div>
+      <h3 class="font-display text-xl" style="color:var(--emerald-deep);">Execution</h3>
+      <p class="text-sm mt-2 text-gray-600 max-w-xl">Site work, carpentry and civil execution run on a fixed schedule, tracked and shared with you weekly.</p>
+    </div>
+    <div class="relative sm:pl-20 reveal">
+      <div class="hidden sm:flex absolute left-0 top-0 w-12 h-12 items-center justify-center border font-display" style="border-color:var(--gold); color:var(--gold); background:var(--ivory);">6</div>
+      <h3 class="font-display text-xl" style="color:var(--emerald-deep);">Handover</h3>
+      <p class="text-sm mt-2 text-gray-600 max-w-xl">A final walkthrough, snag-list resolution, and keys handed over to a space that's genuinely finished.</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ COST ESTIMATOR ============ -->
+
+<section class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--beige);">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center reveal">
+      <p class="eyebrow" style="color:var(--emerald);">Plan Your Budget</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--emerald-deep);">Interior Cost Estimator</h2>
+      <p class="text-sm mt-4 text-gray-600 max-w-lg mx-auto">A ballpark range in seconds. The final quote depends on your site visit and material choices.</p>
+    </div>
+
+<div class="mt-14 bg-[color:var(--ivory)] blueprint-corner p-8 sm:p-12 reveal">
+  <div class="grid sm:grid-cols-2 gap-8">
+    <div>
+      <label class="text-xs tracking-[0.2em] uppercase text-gray-500">Property Type</label>
+      <select id="propType" class="w-full mt-3 bg-transparent border-b py-3 outline-none" style="border-color:var(--emerald);">
+        <option value="1">1 BHK</option>
+        <option value="2" selected>2 BHK</option>
+        <option value="3">3 BHK</option>
+        <option value="4">4 BHK / Villa</option>
+        <option value="0.6">Commercial / Office</option>
+      </select>
+    </div>
+    <div>
+      <label class="text-xs tracking-[0.2em] uppercase text-gray-500">Area (sqft): <span id="areaVal" style="color:var(--emerald); font-weight:700;">1200</span></label>
+      <input id="areaRange" type="range" min="400" max="6000" step="50" value="1200" class="w-full mt-5">
+    </div>
+  </div>
+
+  <div class="grid sm:grid-cols-3 gap-6 mt-10">
+    <label class="flex items-center gap-3 p-4 border cursor-pointer" style="border-color:rgba(15,61,46,0.2);">
+      <input type="checkbox" id="chkKitchen" class="w-4 h-4" style="accent-color:var(--emerald);">
+      <span class="text-sm">Modular Kitchen</span>
+    </label>
+    <label class="flex items-center gap-3 p-4 border cursor-pointer" style="border-color:rgba(15,61,46,0.2);">
+      <input type="checkbox" id="chkWardrobe" class="w-4 h-4" style="accent-color:var(--emerald);">
+      <span class="text-sm">Wardrobes</span>
+    </label>
+    <label class="flex items-center gap-3 p-4 border cursor-pointer" style="border-color:rgba(15,61,46,0.2);">
+      <input type="checkbox" id="chkCeiling" class="w-4 h-4" style="accent-color:var(--emerald);">
+      <span class="text-sm">False Ceiling</span>
+    </label>
+  </div>
+
+  <div class="mt-12 text-center">
+    <p class="text-xs tracking-[0.25em] uppercase text-gray-500">Estimated Budget</p>
+    <p id="estimateOutput" class="font-display text-4xl sm:text-5xl mt-3" style="color:var(--emerald-deep);">₹ 9.6L – ₹ 14.4L</p>
+    <a href="#lead" class="inline-block mt-8 px-8 py-4 text-sm tracking-wide btn-primary">Get an Exact Quote</a>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+
+<section id="casestudies" class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--emerald-deep);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center reveal">
+      <p class="eyebrow">In Detail</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--ivory);">Case studies, not just <span class="font-display-italic" style="color:var(--gold);">photos.</span></h2>
+      <p class="text-sm mt-4 max-w-lg mx-auto" style="color:var(--beige);">The area, timeline and scope behind four recent projects — replace with your own project data and photography.</p>
+    </div>
+
+<div class="mt-16 grid md:grid-cols-2 gap-8">
+  <!-- Case 1 -->
+  <div class="reveal blueprint-corner overflow-hidden group">
+    <div class="aspect-[16/10] overflow-hidden">
+      <img src="https://picsum.photos/seed/styler-case1/1200/750" alt="Living room case study — REPLACE with client project photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+    </div>
+    <div class="p-8" style="background:rgba(248,245,240,0.06);">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">LIVING ROOM</span>
+      <h3 class="font-display text-2xl mt-2" style="color:var(--ivory);">Warm Walnut Family Living Room</h3>
+      <div class="grid grid-cols-3 gap-4 mt-6 pt-6" style="border-top:1px solid rgba(212,175,55,0.2);">
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Area</p><p class="text-sm mt-1" style="color:var(--beige);">420 sqft</p></div>
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Timeline</p><p class="text-sm mt-1" style="color:var(--beige);">6 weeks</p></div>
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Scope</p><p class="text-sm mt-1" style="color:var(--beige);">Design + Execution</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case 2 -->
+  <div class="reveal blueprint-corner overflow-hidden group">
+    <div class="aspect-[16/10] overflow-hidden">
+      <img src="https://picsum.photos/seed/styler-case2/1200/750" alt="Modular kitchen case study — REPLACE with client project photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+    </div>
+    <div class="p-8" style="background:rgba(248,245,240,0.06);">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">MODULAR KITCHEN</span>
+      <h3 class="font-display text-2xl mt-2" style="color:var(--ivory);">Handle-less Island Kitchen</h3>
+      <div class="grid grid-cols-3 gap-4 mt-6 pt-6" style="border-top:1px solid rgba(212,175,55,0.2);">
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Area</p><p class="text-sm mt-1" style="color:var(--beige);">180 sqft</p></div>
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Timeline</p><p class="text-sm mt-1" style="color:var(--beige);">5 weeks</p></div>
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Scope</p><p class="text-sm mt-1" style="color:var(--beige);">Design + Execution</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case 3 -->
+  <div class="reveal blueprint-corner overflow-hidden group">
+    <div class="aspect-[16/10] overflow-hidden">
+      <img src="https://picsum.photos/seed/styler-case3/1200/750" alt="Walk-in wardrobe case study — REPLACE with client project photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+    </div>
+    <div class="p-8" style="background:rgba(248,245,240,0.06);">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">WARDROBE</span>
+      <h3 class="font-display text-2xl mt-2" style="color:var(--ivory);">Backlit Walk-in Dressing Room</h3>
+      <div class="grid grid-cols-3 gap-4 mt-6 pt-6" style="border-top:1px solid rgba(212,175,55,0.2);">
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Area</p><p class="text-sm mt-1" style="color:var(--beige);">95 sqft</p></div>
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Timeline</p><p class="text-sm mt-1" style="color:var(--beige);">3 weeks</p></div>
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Scope</p><p class="text-sm mt-1" style="color:var(--beige);">Design + Execution</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case 4 -->
+  <div class="reveal blueprint-corner overflow-hidden group">
+    <div class="aspect-[16/10] overflow-hidden">
+      <img src="https://picsum.photos/seed/styler-case4/1200/750" alt="False ceiling case study — REPLACE with client project photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+    </div>
+    <div class="p-8" style="background:rgba(248,245,240,0.06);">
+      <span class="text-[10px] tracking-[0.25em]" style="color:var(--gold);">FALSE CEILING</span>
+      <h3 class="font-display text-2xl mt-2" style="color:var(--ivory);">Cove-Lit Gypsum Ceiling</h3>
+      <div class="grid grid-cols-3 gap-4 mt-6 pt-6" style="border-top:1px solid rgba(212,175,55,0.2);">
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Area</p><p class="text-sm mt-1" style="color:var(--beige);">320 sqft</p></div>
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Timeline</p><p class="text-sm mt-1" style="color:var(--beige);">2 weeks</p></div>
+        <div><p class="text-[10px] tracking-[0.15em] uppercase text-gray-400">Scope</p><p class="text-sm mt-1" style="color:var(--beige);">Design + Execution</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-14 text-center reveal">
+  <a href="https://wa.me/919168047444?text=Hi%20Styler%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 text-sm tracking-wide" style="background:#25D366; color:#fff;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.9 0-8.9 4-8.9 8.9 0 1.57.4 3.1 1.18 4.45L3 21l3.77-1.28a8.9 8.9 0 0 0 5.28 1.71h.01c4.9 0 8.9-4 8.9-8.9 0-2.38-.94-4.62-2.36-6.21ZM12.06 19.9h-.01a7.3 7.3 0 0 1-4.7-1.71l-.34-.2-2.79.95.93-2.72-.22-.35a7.36 7.36 0 0 1-1.13-3.98c0-4.06 3.3-7.36 7.37-7.36a7.3 7.3 0 0 1 5.2 2.16 7.28 7.28 0 0 1 2.15 5.19c0 4.06-3.3 7.36-7.36 7.36Z"/></svg>
+    Discuss a Project on WhatsApp
+  </a>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ WHY A WEBSITE MATTERS ============ -->
+
+<section class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--beige);">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center reveal">
+      <p class="eyebrow" style="color:var(--emerald);">Beyond Instagram</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--emerald-deep);">Why a website matters for Styler.</h2>
+      <p class="text-sm mt-4 max-w-lg mx-auto text-gray-600">Instagram builds awareness. A website converts that awareness into booked consultations.</p>
+    </div>
+
+<div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-px" style="background:rgba(15,61,46,0.15);">
+  <div class="bg-[color:var(--ivory)] p-7 reveal">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.4"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M8 21h8M12 18v3"/></svg>
+    <h3 class="font-display text-base mt-4" style="color:var(--emerald-deep);">Showcase Projects Professionally</h3>
+    <p class="text-xs mt-2 text-gray-600 leading-relaxed">A permanent, organised portfolio — not a feed that scrolls away.</p>
+  </div>
+  <div class="bg-[color:var(--ivory)] p-7 reveal">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.4"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+    <h3 class="font-display text-base mt-4" style="color:var(--emerald-deep);">Generate Consultation Requests</h3>
+    <p class="text-xs mt-2 text-gray-600 leading-relaxed">A form and cost estimator that turn visitors into booked calls.</p>
+  </div>
+  <div class="bg-[color:var(--ivory)] p-7 reveal">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <h3 class="font-display text-base mt-4" style="color:var(--emerald-deep);">Appear on Google Searches</h3>
+    <p class="text-xs mt-2 text-gray-600 leading-relaxed">Show up when someone searches "interior designer near me" in Jaipur.</p>
+  </div>
+  <div class="bg-[color:var(--ivory)] p-7 reveal">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    <h3 class="font-display text-base mt-4" style="color:var(--emerald-deep);">Build Trust Beyond Instagram</h3>
+    <p class="text-xs mt-2 text-gray-600 leading-relaxed">A branded site signals an established studio, not just a page.</p>
+  </div>
+  <div class="bg-[color:var(--ivory)] p-7 reveal">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.4"><path d="M3 5h18M3 12h18M3 19h18"/></svg>
+    <h3 class="font-display text-base mt-4" style="color:var(--emerald-deep);">Collect Qualified Leads</h3>
+    <p class="text-xs mt-2 text-gray-600 leading-relaxed">Capture project type, budget and area upfront — before the first call.</p>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+
+<!-- PLACEHOLDER CONTENT: replace names/quotes below with verified reviews from real Styler clients (e.g. Instagram highlights, Google reviews) before this goes live. -->
+
+<section id="testimonials" class="py-28 lg:py-36 px-6 lg:px-10 overflow-hidden" style="background:var(--ivory);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center reveal">
+      <p class="eyebrow" style="color:var(--emerald);">Client Voices</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--emerald-deep);">Homes and offices, in their words.</h2>
+    </div>
+  </div>
+
+  <div class="mt-16 relative">
+    <div id="testiTrack" class="flex gap-6 marquee-track" style="width:max-content;">
+      <!-- set 1 -->
+      <div class="testi-card w-[320px] sm:w-[380px] shrink-0 bg-[color:var(--beige)] blueprint-corner p-8">
+        <div class="flex gap-1 mb-4" style="color:var(--gold);">★★★★★</div>
+        <p class="text-sm leading-relaxed" style="color:var(--charcoal);">Styler turned our builder-flat into something we're proud to invite people into. The 3D renders matched the final result almost exactly.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display" style="background:var(--emerald); color:var(--ivory);">A</div>
+          <div><p class="text-sm font-semibold">Ananya Sharma</p><p class="text-xs text-gray-500">3BHK Apartment, Vaishali Nagar</p></div>
+        </div>
+      </div>
+      <div class="testi-card w-[320px] sm:w-[380px] shrink-0 bg-[color:var(--beige)] blueprint-corner p-8">
+        <div class="flex gap-1 mb-4" style="color:var(--gold);">★★★★★</div>
+        <p class="text-sm leading-relaxed" style="color:var(--charcoal);">Our office fit-out was done on schedule with zero surprise costs. The team managed vendors so we didn't have to.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display" style="background:var(--emerald); color:var(--ivory);">R</div>
+          <div><p class="text-sm font-semibold">Rohit Agarwal</p><p class="text-xs text-gray-500">Corporate Office, Malviya Nagar</p></div>
+        </div>
+      </div>
+      <div class="testi-card w-[320px] sm:w-[380px] shrink-0 bg-[color:var(--beige)] blueprint-corner p-8">
+        <div class="flex gap-1 mb-4" style="color:var(--gold);">★★★★★</div>
+        <p class="text-sm leading-relaxed" style="color:var(--charcoal);">The modular kitchen is exactly what I asked for down to the drawer dividers. Genuinely custom, not a catalogue pick.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display" style="background:var(--emerald); color:var(--ivory);">P</div>
+          <div><p class="text-sm font-semibold">Priya Mehta</p><p class="text-xs text-gray-500">Modular Kitchen, C-Scheme</p></div>
+        </div>
+      </div>
+      <div class="testi-card w-[320px] sm:w-[380px] shrink-0 bg-[color:var(--beige)] blueprint-corner p-8">
+        <div class="flex gap-1 mb-4" style="color:var(--gold);">★★★★★</div>
+        <p class="text-sm leading-relaxed" style="color:var(--charcoal);">Full villa turnkey project, handled end to end. One point of contact throughout made a nine-month project genuinely stress-free.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display" style="background:var(--emerald); color:var(--ivory);">V</div>
+          <div><p class="text-sm font-semibold">Vikram Singh</p><p class="text-xs text-gray-500">Villa Turnkey, Jagatpura</p></div>
+        </div>
+      </div>
+      <div class="testi-card w-[320px] sm:w-[380px] shrink-0 bg-[color:var(--beige)] blueprint-corner p-8">
+        <div class="flex gap-1 mb-4" style="color:var(--gold);">★★★★★</div>
+        <p class="text-sm leading-relaxed" style="color:var(--charcoal);">Our false ceiling and cove lighting completely changed how the living room feels in the evening. Small change, huge difference.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display" style="background:var(--emerald); color:var(--ivory);">N</div>
+          <div><p class="text-sm font-semibold">Neha Kapoor</p><p class="text-xs text-gray-500">Living Room Renovation, Mansarovar</p></div>
+        </div>
+      </div>
+      <!-- duplicate set for seamless marquee -->
+      <div class="testi-card w-[320px] sm:w-[380px] shrink-0 bg-[color:var(--beige)] blueprint-corner p-8">
+        <div class="flex gap-1 mb-4" style="color:var(--gold);">★★★★★</div>
+        <p class="text-sm leading-relaxed" style="color:var(--charcoal);">Styler turned our builder-flat into something we're proud to invite people into. The 3D renders matched the final result almost exactly.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display" style="background:var(--emerald); color:var(--ivory);">A</div>
+          <div><p class="text-sm font-semibold">Ananya Sharma</p><p class="text-xs text-gray-500">3BHK Apartment, Vaishali Nagar</p></div>
+        </div>
+      </div>
+      <div class="testi-card w-[320px] sm:w-[380px] shrink-0 bg-[color:var(--beige)] blueprint-corner p-8">
+        <div class="flex gap-1 mb-4" style="color:var(--gold);">★★★★★</div>
+        <p class="text-sm leading-relaxed" style="color:var(--charcoal);">Our office fit-out was done on schedule with zero surprise costs. The team managed vendors so we didn't have to.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display" style="background:var(--emerald); color:var(--ivory);">R</div>
+          <div><p class="text-sm font-semibold">Rohit Agarwal</p><p class="text-xs text-gray-500">Corporate Office, Malviya Nagar</p></div>
+        </div>
+      </div>
+      <div class="testi-card w-[320px] sm:w-[380px] shrink-0 bg-[color:var(--beige)] blueprint-corner p-8">
+        <div class="flex gap-1 mb-4" style="color:var(--gold);">★★★★★</div>
+        <p class="text-sm leading-relaxed" style="color:var(--charcoal);">The modular kitchen is exactly what I asked for down to the drawer dividers. Genuinely custom, not a catalogue pick.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display" style="background:var(--emerald); color:var(--ivory);">P</div>
+          <div><p class="text-sm font-semibold">Priya Mehta</p><p class="text-xs text-gray-500">Modular Kitchen, C-Scheme</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPPORTUNITY AUDIT ============ -->
+
+<section class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--emerald-deep);">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center reveal">
+      <p class="eyebrow">A Quick Look At Where Styler Stands Today</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--ivory);">Current presence, and where it can grow.</h2>
+    </div>
+
+<div class="mt-16 grid sm:grid-cols-2 gap-8">
+  <div class="glass blueprint-corner p-8 sm:p-10 reveal">
+    <p class="text-xs tracking-[0.25em] uppercase mb-6" style="color:var(--gold);">Current Presence</p>
+    <ul class="space-y-4 text-sm" style="color:var(--ivory);">
+      <li class="flex items-center gap-3"><span style="color:var(--gold);">✓</span> Active Instagram — @stylerinteriors_jaipur</li>
+      <li class="flex items-center gap-3"><span style="color:var(--gold);">✓</span> Growing project portfolio</li>
+      <li class="flex items-center gap-3"><span style="color:var(--gold);">✓</span> Strong, recognisable branding</li>
+    </ul>
+  </div>
+  <div class="p-8 sm:p-10 border reveal" style="border-color:var(--gold);">
+    <p class="text-xs tracking-[0.25em] uppercase mb-6" style="color:var(--gold);">Growth Opportunities</p>
+    <ul class="space-y-4 text-sm" style="color:var(--ivory);">
+      <li class="flex items-center gap-3"><span style="color:var(--gold);">•</span> Google search visibility</li>
+      <li class="flex items-center gap-3"><span style="color:var(--gold);">•</span> A consultation booking system</li>
+      <li class="flex items-center gap-3"><span style="color:var(--gold);">•</span> Documented project case studies</li>
+      <li class="flex items-center gap-3"><span style="color:var(--gold);">•</span> On-site lead capture</li>
+      <li class="flex items-center gap-3"><span style="color:var(--gold);">•</span> WhatsApp-based consultation automation</li>
+    </ul>
+  </div>
+</div>
+
+<p class="text-center text-sm mt-12 max-w-xl mx-auto reveal" style="color:var(--beige);">
+  This concept site is a starting point for closing that gap — built around Styler's own branding, services and service area.
+</p>
+
+  </div>
+</section>
+
+<!-- ============ LEAD GENERATION ============ -->
+
+<section id="lead" class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--emerald-deep);">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <p class="eyebrow">Start Here</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4 leading-tight" style="color:var(--ivory);">Let's design your <span class="font-display-italic" style="color:var(--gold);">dream space.</span></h2>
+      <p class="mt-6 text-sm max-w-md" style="color:var(--beige);">
+        Tell us a little about your project. A designer from our Vaishali Nagar studio will call you back within one business day.
+      </p>
+
+  <div class="mt-10 space-y-5">
+    <div class="flex items-center gap-4">
+      <span class="w-10 h-10 flex items-center justify-center border" style="border-color:var(--gold);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.79.62 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.19a2 2 0 0 1 2.11-.45c.86.29 1.75.5 2.65.62A2 2 0 0 1 22 16.92Z"/></svg>
+      </span>
+      <span class="text-sm" style="color:var(--ivory);">+91 91680 47444</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="w-10 h-10 flex items-center justify-center border" style="border-color:var(--gold);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+      </span>
+      <span class="text-sm" style="color:var(--ivory);">stylerinteriorsjaipur@gmail.com</span>
+    </div>
+  </div>
+</div>
+
+<form id="leadForm" class="reveal glass blueprint-corner p-8 sm:p-10 space-y-5" onsubmit="return handleLeadSubmit(event)">
+  <div>
+    <label class="text-xs tracking-[0.2em] uppercase" style="color:var(--beige);">Name</label>
+    <input required type="text" placeholder="Your full name" class="w-full mt-2 bg-transparent border-b py-3 outline-none text-sm" style="border-color:rgba(212,175,55,0.4); color:var(--ivory);">
+  </div>
+  <div class="grid sm:grid-cols-2 gap-5">
+    <div>
+      <label class="text-xs tracking-[0.2em] uppercase" style="color:var(--beige);">Phone</label>
+      <input required type="tel" placeholder="+91" class="w-full mt-2 bg-transparent border-b py-3 outline-none text-sm" style="border-color:rgba(212,175,55,0.4); color:var(--ivory);">
+    </div>
+    <div>
+      <label class="text-xs tracking-[0.2em] uppercase" style="color:var(--beige);">Email</label>
+      <input required type="email" placeholder="you@email.com" class="w-full mt-2 bg-transparent border-b py-3 outline-none text-sm" style="border-color:rgba(212,175,55,0.4); color:var(--ivory);">
+    </div>
+  </div>
+  <div>
+    <label class="text-xs tracking-[0.2em] uppercase" style="color:var(--beige);">Project Type</label>
+    <select class="w-full mt-2 bg-transparent border-b py-3 outline-none text-sm" style="border-color:rgba(212,175,55,0.4); color:var(--ivory);">
+      <option style="color:#000;">Residential Interiors</option>
+      <option style="color:#000;">Commercial Interiors</option>
+      <option style="color:#000;">Modular Kitchen</option>
+      <option style="color:#000;">Wardrobes</option>
+      <option style="color:#000;">False Ceiling</option>
+      <option style="color:#000;">Turnkey Project</option>
+    </select>
+  </div>
+  <div>
+    <label class="text-xs tracking-[0.2em] uppercase" style="color:var(--beige);">Message</label>
+    <textarea rows="3" placeholder="Tell us about your space..." class="w-full mt-2 bg-transparent border-b py-3 outline-none text-sm resize-none" style="border-color:rgba(212,175,55,0.4); color:var(--ivory);"></textarea>
+  </div>
+  <button type="submit" class="w-full py-4 text-sm tracking-wide btn-primary">Send Enquiry</button>
+  <a href="https://wa.me/919168047444?text=Hi%20Styler%2C%20I%27d%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 py-4 text-sm tracking-wide" style="background:#25D366; color:#fff;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.9 0-8.9 4-8.9 8.9 0 1.57.4 3.1 1.18 4.45L3 21l3.77-1.28a8.9 8.9 0 0 0 5.28 1.71h.01c4.9 0 8.9-4 8.9-8.9 0-2.38-.94-4.62-2.36-6.21ZM12.06 19.9h-.01a7.3 7.3 0 0 1-4.7-1.71l-.34-.2-2.79.95.93-2.72-.22-.35a7.36 7.36 0 0 1-1.13-3.98c0-4.06 3.3-7.36 7.37-7.36a7.3 7.3 0 0 1 5.2 2.16 7.28 7.28 0 0 1 2.15 5.19c0 4.06-3.3 7.36-7.36 7.36Z"/></svg>
+    Or Message Us on WhatsApp
+  </a>
+  <p id="leadSuccess" class="hidden text-xs text-center" style="color:var(--gold);">Thank you — our team will call you back within one business day.</p>
+</form>
+
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+
+<section id="contact" class="py-28 lg:py-36 px-6 lg:px-10" style="background:var(--ivory);">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+    <div class="reveal">
+      <p class="eyebrow" style="color:var(--emerald);">Visit The Studio</p>
+      <h2 class="font-display text-4xl sm:text-5xl mt-4" style="color:var(--emerald-deep);">Come see the materials in person.</h2>
+      <div class="hairline w-24 my-8"></div>
+
+  <div class="space-y-6 text-sm">
+    <div>
+      <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-2">Studio Address</p>
+      <p style="color:var(--charcoal);">Vaishali Nagar, Jaipur, Rajasthan</p>
+    </div>
+    <div>
+      <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-2">Service Area</p>
+      <p style="color:var(--charcoal);">Jaipur &amp; NCR</p>
+    </div>
+    <div>
+      <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-2">Phone</p>
+      <p style="color:var(--charcoal);">+91 91680 47444</p>
+    </div>
+    <div>
+      <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-2">Email</p>
+      <p style="color:var(--charcoal);">stylerinteriorsjaipur@gmail.com</p>
+    </div>
+    <div>
+      <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-2">Instagram</p>
+      <p style="color:var(--charcoal);">@stylerinteriors_jaipur</p>
+    </div>
+  </div>
+</div>
+
+<div class="relative aspect-[4/3] blueprint-corner overflow-hidden reveal" style="background:var(--beige);">
+  <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.3"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    <p class="text-sm text-center" style="color:var(--emerald-deep);">Vaishali Nagar, Jaipur</p>
+    <p class="text-xs text-gray-500">Map preview — connect Google Maps for live directions</p>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+<footer class="pt-20 pb-10 px-6 lg:px-10" style="background:var(--emerald-deep); border-top:1px solid rgba(212,175,55,0.2);">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div>
+      <!-- PLACEHOLDER LOGO: same real "S" mark as navbar -->
+      <div class="flex items-center gap-3">
+        <span class="w-10 h-10 flex items-center justify-center border" style="border-color:var(--gold);">
+          <span class="font-display italic text-xl" style="color:var(--gold);">S</span>
+        </span>
+        <span class="font-display text-lg" style="color:var(--ivory);">STYLER</span>
+      </div>
+      <p class="text-sm mt-5" style="color:var(--beige);">Designing Spaces, Defining Lifestyles.</p>
+      <p class="text-xs mt-4 text-gray-400">@stylerinteriors_jaipur</p>
+    </div>
+
+<div>
+  <p class="text-xs tracking-[0.25em] uppercase mb-5" style="color:var(--gold);">Services</p>
+  <ul class="space-y-3 text-sm" style="color:var(--beige);">
+    <li>Residential Interiors</li>
+    <li>Commercial Interiors</li>
+    <li>Modular Kitchens</li>
+    <li>Wardrobes</li>
+    <li>False Ceilings</li>
+    <li>Turnkey Solutions</li>
+  </ul>
+</div>
+
+<div>
+  <p class="text-xs tracking-[0.25em] uppercase mb-5" style="color:var(--gold);">Quick Links</p>
+  <ul class="space-y-3 text-sm" style="color:var(--beige);">
+    <li><a href="#projects" class="hover:opacity-70">Projects</a></li>
+    <li><a href="#services" class="hover:opacity-70">Services</a></li>
+    <li><a href="#process" class="hover:opacity-70">Process</a></li>
+    <li><a href="#testimonials" class="hover:opacity-70">Testimonials</a></li>
+    <li><a href="#lead" class="hover:opacity-70">Book Consultation</a></li>
+  </ul>
+</div>
+
+<div>
+  <p class="text-xs tracking-[0.25em] uppercase mb-5" style="color:var(--gold);">Contact</p>
+  <ul class="space-y-3 text-sm" style="color:var(--beige);">
+    <li>Vaishali Nagar, Jaipur</li>
+    <li>+91 91680 47444</li>
+    <li>stylerinteriorsjaipur@gmail.com</li>
+  </ul>
+</div>
+
+  </div>
+
+  <div class="max-w-7xl mx-auto mt-16 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs" style="border-top:1px solid rgba(212,175,55,0.15); color:rgba(248,245,240,0.5);">
+    <p>© 2026 Styler Interior Design Studio. All rights reserved.</p>
+    <p>Vaishali Nagar, Jaipur &amp; NCR</p>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+
+<a href="https://wa.me/919168047444" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full items-center justify-center shadow-2xl float-anim hidden sm:flex" style="background:#25D366;">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.9 0-8.9 4-8.9 8.9 0 1.57.4 3.1 1.18 4.45L3 21l3.77-1.28a8.9 8.9 0 0 0 5.28 1.71h.01c4.9 0 8.9-4 8.9-8.9 0-2.38-.94-4.62-2.36-6.21ZM12.06 19.9h-.01a7.3 7.3 0 0 1-4.7-1.71l-.34-.2-2.79.95.93-2.72-.22-.35a7.36 7.36 0 0 1-1.13-3.98c0-4.06 3.3-7.36 7.37-7.36a7.3 7.3 0 0 1 5.2 2.16 7.28 7.28 0 0 1 2.15 5.19c0 4.06-3.3 7.36-7.36 7.36Zm4.03-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.35-.11-.5.11-.14.22-.57.72-.7.87-.13.14-.26.16-.48.06-.22-.11-.94-.35-1.79-1.11-.66-.59-1.11-1.32-1.24-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.4.11-.13.14-.22.22-.37.07-.14.04-.27-.02-.38-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.14 0-.38.06-.58.27-.2.22-.76.74-.76 1.8s.78 2.09.89 2.24c.11.14 1.53 2.34 3.71 3.28.52.22.92.36 1.24.46.52.17 1 .14 1.37.09.42-.06 1.3-.53 1.48-1.05.18-.51.18-.95.13-1.04-.05-.1-.2-.16-.42-.27Z"/></svg>
+</a>
+
+<!-- ============ MOBILE STICKY WHATSAPP CTA ============ -->
+
+<a href="https://wa.me/919168047444?text=Hi%20Styler%2C%20I%27d%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" class="sm:hidden fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center gap-2 py-4 text-sm font-semibold" style="background:#25D366; color:#fff;">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.9 0-8.9 4-8.9 8.9 0 1.57.4 3.1 1.18 4.45L3 21l3.77-1.28a8.9 8.9 0 0 0 5.28 1.71h.01c4.9 0 8.9-4 8.9-8.9 0-2.38-.94-4.62-2.36-6.21ZM12.06 19.9h-.01a7.3 7.3 0 0 1-4.7-1.71l-.34-.2-2.79.95.93-2.72-.22-.35a7.36 7.36 0 0 1-1.13-3.98c0-4.06 3.3-7.36 7.37-7.36a7.3 7.3 0 0 1 5.2 2.16 7.28 7.28 0 0 1 2.15 5.19c0 4.06-3.3 7.36-7.36 7.36Z"/></svg>
+  Book Consultation on WhatsApp
+</a>
+
+<script>
+  // ---------- Navbar scroll state ----------
+  const navbar = document.getElementById('navbar');
+  const brandTop = document.getElementById('brandTop');
+  const navlinks = document.getElementById('navlinks');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.style.background = 'rgba(10,43,32,0.92)';
+      navbar.style.backdropFilter = 'blur(14px)';
+      navbar.style.borderBottom = '1px solid rgba(212,175,55,0.2)';
+    } else {
+      navbar.style.background = 'transparent';
+      navbar.style.backdropFilter = 'none';
+      navbar.style.borderBottom = 'none';
+    }
+  });
+
+  // ---------- Mobile menu ----------
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  document.querySelectorAll('.mobile-link').forEach(l => {
+    l.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+
+  // ---------- Scroll reveal ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ---------- Animated counters ----------
+  const counters = document.querySelectorAll('.counter');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        if (el.dataset.static) {
+          el.textContent = el.dataset.static;
+        } else {
+          const target = parseInt(el.dataset.target, 10);
+          const suffix = el.dataset.suffix || '';
+          let cur = 0;
+          const step = Math.max(1, Math.round(target / 40));
+          const iv = setInterval(() => {
+            cur += step;
+            if (cur >= target) { cur = target; clearInterval(iv); }
+            el.textContent = cur + suffix;
+          }, 30);
+        }
+        counterIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => counterIO.observe(c));
+
+  // ---------- Before/After slider ----------
+  const baSlider = document.getElementById('baSlider');
+  const baAfterWrap = document.getElementById('baAfterWrap');
+  const baHandle = document.getElementById('baHandle');
+  let dragging = false;
+
+  function setSlider(clientX){
+    const rect = baSlider.getBoundingClientRect();
+    let pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(0, Math.min(100, pct));
+    baAfterWrap.style.width = pct + '%';
+    baHandle.style.left = pct + '%';
+  }
+  baHandle.addEventListener('mousedown', () => dragging = true);
+  window.addEventListener('mouseup', () => dragging = false);
+  window.addEventListener('mousemove', (e) => { if (dragging) setSlider(e.clientX); });
+  baHandle.addEventListener('touchstart', () => dragging = true, {passive:true});
+  window.addEventListener('touchend', () => dragging = false);
+  window.addEventListener('touchmove', (e) => { if (dragging && e.touches[0]) setSlider(e.touches[0].clientX); }, {passive:true});
+  baSlider.addEventListener('click', (e) => setSlider(e.clientX));
+
+  // ---------- Cost Estimator ----------
+  const propType = document.getElementById('propType');
+  const areaRange = document.getElementById('areaRange');
+  const areaVal = document.getElementById('areaVal');
+  const chkKitchen = document.getElementById('chkKitchen');
+  const chkWardrobe = document.getElementById('chkWardrobe');
+  const chkCeiling = document.getElementById('chkCeiling');
+  const estimateOutput = document.getElementById('estimateOutput');
+
+  function formatLakh(v){
+    return '₹ ' + (v/100000).toFixed(1) + 'L';
+  }
+
+  function calcEstimate(){
+    const area = parseInt(areaRange.value, 10);
+    areaVal.textContent = area;
+    const baseRateLow = 1400;   // per sqft, low
+    const baseRateHigh = 2100;  // per sqft, high
+    let low = area * baseRateLow;
+    let high = area * baseRateHigh;
+
+    if (chkKitchen.checked) { low += 180000; high += 320000; }
+    if (chkWardrobe.checked) { low += 90000; high += 160000; }
+    if (chkCeiling.checked) { low += 60000; high += 110000; }
+
+    estimateOutput.textContent = formatLakh(low) + ' – ' + formatLakh(high);
+  }
+  [propType, areaRange, chkKitchen, chkWardrobe, chkCeiling].forEach(el => {
+    el.addEventListener('input', calcEstimate);
+    el.addEventListener('change', calcEstimate);
+  });
+  calcEstimate();
+
+  // ---------- Lead form ----------
+  function handleLeadSubmit(e){
+    e.preventDefault();
+    document.getElementById('leadSuccess').classList.remove('hidden');
+    e.target.reset();
+    return false;
+  }
+
+  // ---------- Testimonial marquee pause on hover ----------
+  const testiTrack = document.getElementById('testiTrack');
+  testiTrack.addEventListener('mouseenter', () => testiTrack.style.animationPlayState = 'paused');
+  testiTrack.addEventListener('mouseleave', () => testiTrack.style.animationPlayState = 'running');
+</script>
+
+</body>
+</html>
