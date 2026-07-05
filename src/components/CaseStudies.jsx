@@ -18,7 +18,7 @@ const CaseStudies = () => {
           {/* Case 1 */}
           <div className="reveal blueprint-corner overflow-hidden group">
             <div className="aspect-[16/10] overflow-hidden">
-              <img src="/images/project_living_room.png" alt="Living room case study" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="/images/project_living_room.webp" alt="Living room case study" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="p-8 bg-[rgba(248,245,240,0.06)]">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">LIVING ROOM</span>
@@ -34,7 +34,7 @@ const CaseStudies = () => {
           {/* Case 2 */}
           <div className="reveal blueprint-corner overflow-hidden group">
             <div className="aspect-[16/10] overflow-hidden">
-              <img src="/images/project_kitchen.png" alt="Modular kitchen case study" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="/images/project_kitchen.webp" alt="Modular kitchen case study" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="p-8 bg-[rgba(248,245,240,0.06)]">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">MODULAR KITCHEN</span>
@@ -50,7 +50,7 @@ const CaseStudies = () => {
           {/* Case 3 */}
           <div className="reveal blueprint-corner overflow-hidden group">
             <div className="aspect-[16/10] overflow-hidden">
-              <img src="/images/project_wardrobe.png" alt="Walk-in wardrobe case study" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="/images/project_wardrobe.webp" alt="Walk-in wardrobe case study" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="p-8 bg-[rgba(248,245,240,0.06)]">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">WARDROBE</span>
@@ -66,7 +66,7 @@ const CaseStudies = () => {
           {/* Case 4 */}
           <div className="reveal blueprint-corner overflow-hidden group">
             <div className="aspect-[16/10] overflow-hidden">
-              <img src="/images/project_ceiling.png" alt="False ceiling case study" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="/images/project_ceiling.webp" alt="False ceiling case study" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="p-8 bg-[rgba(248,245,240,0.06)]">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">FALSE CEILING</span>

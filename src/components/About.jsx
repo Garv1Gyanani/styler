@@ -46,10 +46,10 @@ const About = () => {
         <div className="lg:col-span-7 relative reveal">
           <div className="grid grid-cols-2 gap-4">
             <div className="blueprint-corner overflow-hidden aspect-[3/4] mt-10">
-              <img src="/images/project_living_room.png" alt="Styler Interior Design Studio — living space detail" className="w-full h-full object-cover" />
+              <img src="/images/project_living_room.webp" alt="Styler Interior Design Studio — living space detail" className="w-full h-full object-cover" />
             </div>
             <div className="blueprint-corner overflow-hidden aspect-[3/4]">
-              <img src="/images/project_kitchen.png" alt="Styler Interior Design Studio — dining space" className="w-full h-full object-cover" />
+              <img src="/images/project_kitchen.webp" alt="Styler Interior Design Studio — dining space" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="absolute -bottom-8 left-8 right-8 glass-light blueprint-corner p-6 flex items-center gap-6">

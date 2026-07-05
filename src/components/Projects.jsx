@@ -19,7 +19,7 @@ const Projects = () => {
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Card 1 */}
           <div className="project-card relative group blueprint-corner aspect-[4/5] reveal">
-            <img src="/images/project_living_room.png" alt="Modern luxury living room" className="w-full h-full object-cover" />
+            <img src="/images/project_living_room.webp" alt="Modern luxury living room" className="w-full h-full object-cover" />
             <div className="project-overlay absolute inset-0 flex flex-col justify-end p-6">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">RESIDENTIAL</span>
               <h3 className="font-display text-xl mt-2 text-[var(--ivory)]">Modern Luxury Living Room</h3>
@@ -30,7 +30,7 @@ const Projects = () => {
           </div>
           {/* Card 2 */}
           <div className="project-card relative group blueprint-corner aspect-[4/5] sm:mt-10 reveal">
-            <img src="/images/project_kitchen.png" alt="Contemporary modular kitchen" className="w-full h-full object-cover" />
+            <img src="/images/project_kitchen.webp" alt="Contemporary modular kitchen" className="w-full h-full object-cover" />
             <div className="project-overlay absolute inset-0 flex flex-col justify-end p-6">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">MODULAR KITCHEN</span>
               <h3 className="font-display text-xl mt-2 text-[var(--ivory)]">Contemporary Modular Kitchen</h3>
@@ -41,7 +41,7 @@ const Projects = () => {
           </div>
           {/* Card 3 */}
           <div className="project-card relative group blueprint-corner aspect-[4/5] reveal">
-            <img src="/images/project_bedroom.png" alt="Elegant master bedroom" className="w-full h-full object-cover" />
+            <img src="/images/project_bedroom.webp" alt="Elegant master bedroom" className="w-full h-full object-cover" />
             <div className="project-overlay absolute inset-0 flex flex-col justify-end p-6">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">RESIDENTIAL</span>
               <h3 className="font-display text-xl mt-2 text-[var(--ivory)]">Elegant Master Bedroom</h3>
@@ -52,7 +52,7 @@ const Projects = () => {
           </div>
           {/* Card 4 */}
           <div className="project-card relative group blueprint-corner aspect-[4/5] sm:mt-10 reveal">
-            <img src="/images/project_office.png" alt="Corporate office space" className="w-full h-full object-cover" />
+            <img src="/images/project_office.webp" alt="Corporate office space" className="w-full h-full object-cover" />
             <div className="project-overlay absolute inset-0 flex flex-col justify-end p-6">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">COMMERCIAL</span>
               <h3 className="font-display text-xl mt-2 text-[var(--ivory)]">Corporate Office Space</h3>
@@ -63,7 +63,7 @@ const Projects = () => {
           </div>
           {/* Card 5 */}
           <div className="project-card relative group blueprint-corner aspect-[4/5] reveal">
-            <img src="/images/project_wardrobe.png" alt="Luxury wardrobe design" className="w-full h-full object-cover" />
+            <img src="/images/project_wardrobe.webp" alt="Luxury wardrobe design" className="w-full h-full object-cover" />
             <div className="project-overlay absolute inset-0 flex flex-col justify-end p-6">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">WARDROBES</span>
               <h3 className="font-display text-xl mt-2 text-[var(--ivory)]">Luxury Wardrobe Design</h3>
@@ -74,7 +74,7 @@ const Projects = () => {
           </div>
           {/* Card 6 */}
           <div className="project-card relative group blueprint-corner aspect-[4/5] sm:mt-10 reveal">
-            <img src="/images/project_ceiling.png" alt="False ceiling transformation" className="w-full h-full object-cover" />
+            <img src="/images/project_ceiling.webp" alt="False ceiling transformation" className="w-full h-full object-cover" />
             <div className="project-overlay absolute inset-0 flex flex-col justify-end p-6">
               <span className="text-[10px] tracking-[0.25em] text-[var(--gold)]">FALSE CEILING</span>
               <h3 className="font-display text-xl mt-2 text-[var(--ivory)]">False Ceiling Transformation</h3>

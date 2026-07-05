@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-end bg-[var(--emerald-deep)]">
       <div className="absolute inset-0">
-        <img src="/banner.png" alt="Luxury living room designed by Styler Interior Design Studio" className="w-full h-full object-cover opacity-50" />
+        <img src="/banner.webp" alt="Luxury living room designed by Styler Interior Design Studio" className="w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(10,43,32,.55) 0%, rgba(10,43,32,.35) 40%, rgba(10,43,32,.95) 100%)' }}></div>
       </div>
 

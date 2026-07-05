@@ -55,14 +55,14 @@ const BeforeAfter = () => {
           onMouseDown={() => isDragging.current = true}
           onTouchStart={() => isDragging.current = true}
         >
-          <img src="/images/after_renovation.png" alt="After renovation" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+          <img src="/images/after_renovation.webp" alt="After renovation" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
           
           <div 
             className="absolute inset-0 overflow-hidden pointer-events-none" 
             style={{ width: `${percent}%` }}
           >
             <img 
-              src="/images/before_renovation.png" 
+              src="/images/before_renovation.webp" 
               alt="Before renovation" 
               className="absolute inset-0 h-full object-cover" 
               style={{ width: '100%', minWidth: '100vw', maxWidth: 'none', left: 0 }} 
